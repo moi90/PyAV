@@ -2,7 +2,7 @@ from libc.stdint cimport uint8_t
 
 from av.enum cimport define_enum
 from av.error cimport err_check
-from av.video.format cimport VideoFormat, get_video_format, get_pix_fmt
+from av.video.format cimport VideoFormat, get_pix_fmt, get_video_format
 from av.video.plane cimport VideoPlane
 
 from av.deprecation import renamed_attr

@@ -6,7 +6,7 @@ from av.error cimport err_check
 from av.frame cimport Frame
 from av.packet cimport Packet
 from av.utils cimport avrational_to_fraction, to_avrational
-from av.video.format cimport VideoFormat, get_video_format, get_pix_fmt
+from av.video.format cimport VideoFormat, get_pix_fmt, get_video_format
 from av.video.frame cimport VideoFrame, alloc_video_frame
 from av.video.reformatter cimport VideoReformatter
 
@@ -95,7 +95,7 @@ cdef class VideoCodecContext(CodecContext):
 
     property pix_fmt:
         """
-        The pix_fmt.
+        The pixel format's name.
 
         :type: str
         """
