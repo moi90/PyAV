@@ -236,6 +236,13 @@ class TestEncoding(TestCase):
         ctx.height = height
         ctx.time_base = time_base
         ctx.framerate = 1 / ctx.time_base
+
+        # First, assert that an unknown pix_fmt raises an exception
+        with self.assertRaises(ValueError):
+            ctx.pix_fmt = "__unknown_pix_fmt"
+            # This should never execute:
+            self.assertGreaterEqual(ctx._format.pix_fmt, 0)
+
         ctx.pix_fmt = pix_fmt
         ctx.options = options  # TODO
         if codec_tag:
